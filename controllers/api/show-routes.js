@@ -1,4 +1,4 @@
-const Show = require("../../models");
+const {Show} = require("../../models");
 const sequelize = require("../../config/connection");
 const router = require("express").Router();
 
@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   Show.create({
+    band_name: req.body.band_name,
     load_in: req.body.load_in,
     extra_deets: req.body.extra_deets,
     soundcheck: req.body.soundcheck,
@@ -40,5 +41,19 @@ router.put("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
+
+// router.get("/:id", (req, res) => {
+//   Show.findOne({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then((dbShowData) => {
+//     if (!dbShowData) {
+//       res.status(404).json({message: "No shows found with this id"})
+//       return
+//     }
+//     res.json(dbShowData)
+//   })
+// })
 
 module.exports = router;

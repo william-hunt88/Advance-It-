@@ -1,0 +1,12 @@
+<main>
+  <div class="home-wrapper">
+    <ol class="post-list">
+      {{#each shows as |show|}}
+      <li>
+        {{> show-info show}}
+      </li>
+      {{/each}}
+    </ol>
+  </div>
+</main>
+    <script src="javascript/single.js"></script>

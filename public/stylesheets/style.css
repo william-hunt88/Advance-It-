@@ -20,7 +20,20 @@ h2 {
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  background-image: url("../assets/background4.JPG");
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 25px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.header-logo {
+  display: flex;
+  align-items: baseline;
 }
 
 body {
@@ -28,8 +41,7 @@ body {
   padding: 0px;
   min-height: 100%;
   width: 100%;
-  /* background-color: #848884; */
-  color: #f9f6ee;
+  color: rgb(237, 255, 224);
 }
 
 .wrapper {
@@ -40,15 +52,24 @@ body {
   position: absolute;
 }
 
-.login-body {
-  background-image: url("../assets/phish-lights.jpeg");
-  background-size: cover;
-  background-position: center;
+.home-wrapper {
+  width: 75%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  margin-top: 65px;
 }
 
 .btn-wrap {
   display: flex;
   justify-content: center;
+  margin: 5px;
+}
+
+.double-btn {
+  margin: 5px;
 }
 
 .form-deets {
@@ -57,4 +78,32 @@ body {
 
 .signup-form {
   display: none;
+}
+
+.background {
+  background-image: url("../assets/background4.JPG");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+/* // Background Blur using backdrop-filter */
+.blur {
+  background: rgba(237, 255, 224, 0.166);
+  backdrop-filter: blur(1px);
+}
+
+.show-input {
+  display: flex;
+  flex-direction: column;
+}
+
+.file-cta {
+  width: 250px;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
 }

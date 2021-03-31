@@ -1,44 +1,53 @@
 const sequelize = require("../config/connection");
 const { Model, DataTypes } = require("sequelize");
 
-
 class Show extends Model {}
 
 Show.init(
-    {
-        id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            primaryKey: true,
-            autoIncrement: true,
-          },
-        load_in: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        extra_deets: {
-            type: DataTypes.STRING,
-            allowNull: true,
-        },
-        soundcheck: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        input_list: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
-        stage_plot: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-    {
-        sequelize,
-        freezeTableName: true,
-        underscored: true,
-        modelName: "show",
-      }
+    band_name: {
+      // what time will you be loading in?
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    load_in: {
+      // what time will you be loading in?
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    soundcheck: {
+      // what time do you want to soundcheck?
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    extra_deets: {
+      // Any extra details?
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    input_list: {
+      // upload an image of your input list.
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    stage_plot: {
+      // upload your stage plot?
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+  },
+  {
+    sequelize,
+    freezeTableName: true,
+    underscored: true,
+    modelName: "show",
+  }
 );
 
 module.exports = Show;

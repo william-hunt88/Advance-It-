@@ -2,42 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Just Tech News</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance-It</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
-<body>
+<body class="login-body">
     <header>
-        <h1>
-            Show Advancer Pro
-        </h1>
-        <nav>
-            <a href="/logout">Logout</a>
-        </nav>
+        <div class="header-logo">
+            <h1>Show Advancer</h1>
+            <h2>Pro</h2>
+        </div>
+        {{#if loggedIn}}
+        <button class="ui button ">Logout</button>
+        {{/if}}
     </header>
-    <main>
-        <form></form>
-    </main>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="background">
+        <div class="blur">
+            {{{body}}}
+        </div>
+    </div>
 </body>
-
 
 </html>
