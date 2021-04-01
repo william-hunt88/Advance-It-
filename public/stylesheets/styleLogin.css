@@ -7,7 +7,6 @@ html {
 main {
   min-height: 100%;
   width: 100%;
-  color: black;
 }
 
 h1 {
@@ -83,7 +82,7 @@ body {
 }
 
 .background {
-  background-color: #A27AD8;
+  background-image: url("../assets/background4.JPG");
   position: absolute;
   background-attachment: fixed;
   background-repeat: no-repeat;

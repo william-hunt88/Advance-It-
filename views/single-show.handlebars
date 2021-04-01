@@ -1,11 +1,23 @@
-<main class = "color">
+<main class="color">
     <div class="home-wrapper">
-        {{shows.band_name}}
-        {{shows.load_in}}
-        {{shows.soundcheck}}
-        {{shows.extra_deets}}
-        <img src="{{shows.stage_plot}}" alt="">
-        <img src="{{shows.input_list}}" alt="">
+        <h1>
+            {{shows.band_name}}
+        </h1>
+        <h2>
+            Load in: {{shows.load_in}}
+        </h2>
+        <h2>
+            Soundcheck: {{shows.soundcheck}}
+        </h2>
+        <h3>
+            Extra Notes: {{shows.extra_deets}}
+            </h2>
+            <h2>
+                Stage Plot: <img src="{{shows.stage_plot}}" alt="">
+            </h2>
+            <h2>
+                Input List: <img src="{{shows.input_list}}" alt="">
+            </h2>
     </div>
 </main>
-    <script src="/javascript/single.js"></script>
+<script src="/javascript/single.js"></script>

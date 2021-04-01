@@ -1,12 +1,12 @@
 <main>
   <div class="home-wrapper">
-    <ol class="post-list">
+    <ul class="post-list" style="list-style-type:none;">
       {{#each shows as |show|}}
       <li>
         {{> show-info show}}
       </li>
       {{/each}}
-    </ol>
+    </ul>
   </div>
 </main>
     <script src="javascript/homepage.js"></script>

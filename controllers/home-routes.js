@@ -2,7 +2,9 @@ const router = require("express").Router();
 const {Show} = require("../models");
 
 router.get("/", (req, res) => {
-  res.render("landing");
+  res.render("landing", {
+    layout: "login"
+  });
 });
 
 router.get("/homepage", (req, res) => {
@@ -21,6 +23,7 @@ router.get("/homepage", (req, res) => {
 
 router.get("/show-input", (req, res) => {
   res.render("show-input-form", {
+    loggedIn: req.session.loggedIn
   })
 })
 

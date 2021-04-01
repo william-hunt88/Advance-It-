@@ -8,6 +8,7 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   Show.create({
+    date: req.body.date,
     band_name: req.body.band_name,
     load_in: req.body.load_in,
     extra_deets: req.body.extra_deets,

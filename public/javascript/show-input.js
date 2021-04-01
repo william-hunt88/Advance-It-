@@ -1,3 +1,12 @@
+const background = document.querySelector(".background")
+const blur = document.querySelector(".blur")
+
+background.setAttribute("style", "background: #A27AD8");
+background.setAttribute("style", "height: 100%")
+blur.setAttribute("style", "background: rgba(237, 255, 224, 0.550)")
+
+
+
 function getStagePlot() {
   const img = document.querySelector(".stage-plot-input");
   var formData = new FormData();
@@ -47,6 +56,8 @@ function getInputList(stagePlot) {
 }
 
 async function showBuildHandler(stagePlot, inputList) {
+  const date = document.querySelector(".date").value.trim();
+  console.log(date)
   const soundcheck = document.querySelector(".soundcheck").value.trim();
   const loadIn = document.querySelector(".load-in").value.trim();
   const extraDeets = document.querySelector(".extra-deets").value.trim();
@@ -55,6 +66,7 @@ async function showBuildHandler(stagePlot, inputList) {
   const response = await fetch(`/api/shows`, {
     method: "POST",
     body: JSON.stringify({
+      date: date,
       band_name: band_name,
       load_in: loadIn,
       soundcheck: soundcheck,

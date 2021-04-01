@@ -11,6 +11,11 @@ Show.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    date: {
+      // what time will you be loading in?
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     band_name: {
       // what time will you be loading in?
       type: DataTypes.STRING,

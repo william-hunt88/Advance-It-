@@ -7,30 +7,27 @@
     <title>Advance-It</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="/stylesheets/styleLogin.css" />
 </head>
 
 <body class="login-body">
     <header>
         <div class="header-logo">
-            <a href="/homepage" style="text-decoration: none;   color: rgb(237, 255, 224);">
-                <h1>Show Advancer</h1>
-            </a>
+            <h1>Show Advancer</h1>
             <h2>Pro</h2>
         </div>
         {{#if loggedIn}}
         <div>
-            <button class=" ui button " id="logout">Logout</button>
-            <button class=" ui button "><a href="/show-input">Add a show</a></button>
+            <button class="ui button ">Logout</button>
+            <button class="ui button ">Add a show</button>
         </div>
         {{/if}}
     </header>
-    <div class=" background">
+    <div class="background">
         <div class="blur">
             {{{body}}}
         </div>
     </div>
-    <script src="/javascript/logout.js"></script>
 </body>
 
 </html>
