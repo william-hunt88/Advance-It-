@@ -29,6 +29,7 @@ header {
   top: 0;
   z-index: 1;
   overflow: hidden;
+  height: 200px;
 }
 
 .header-logo {
@@ -81,21 +82,20 @@ body {
 }
 
 .background {
-  background-image: url("../assets/background4.JPG");
+  background-color: #A27AD8;
+  position: absolute;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100vh;
-  width: 100vw;
-
+  width: 100%;
 }
 
 /* // Background Blur using backdrop-filter */
 .blur {
   background: rgba(237, 255, 224, 0.166);
   backdrop-filter: blur(1px);
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
 }
 
 .show-input {

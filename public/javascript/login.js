@@ -1,6 +1,12 @@
 const register = document.querySelector(".signup-form");
 const login = document.querySelector(".login-form");
 const revealRegisterForm = document.querySelector("#registerFormBtn")
+const background = document.querySelector(".background")
+const blur = document.querySelector(".blur")
+
+background.setAttribute("style", "background: #A27AD8");
+background.setAttribute("style", "height: 100%")
+blur.setAttribute("style", "background: rgba(237, 255, 224, 0.550)")
 
 async function loginFormHandler(event) {
   console.log("login-formhandler")
