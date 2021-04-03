@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const {Show} = require("../models");
+const {Show, Comment, User} = require("../models");
 
 router.get("/", (req, res) => {
   res.render("landing", {
@@ -31,7 +31,21 @@ router.get("/shows/:id", (req, res) => {
   Show.findOne({
     where: {
       id: req.params.id
-    }
+    },
+    include: [
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "show_id", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username", "band_name"],
+        },
+      },
+      {
+        model: User,
+        attributes: ["username"],
+      },
+    ],
   }).then((dbShowData) => {
     if (!dbShowData) {
       res.status(404).json({message: "No shows found with this id"})

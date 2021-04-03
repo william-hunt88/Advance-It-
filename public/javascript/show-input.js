@@ -7,7 +7,9 @@ blur.setAttribute("style", "background: rgba(237, 255, 224, 0.550)")
 
 
 
-function getStagePlot() {
+function getStagePlot(event) {
+  event.preventDefault();
+
   const img = document.querySelector(".stage-plot-input");
   var formData = new FormData();
   formData.append("image", img.files[0]);
@@ -57,7 +59,6 @@ function getInputList(stagePlot) {
 
 async function showBuildHandler(stagePlot, inputList) {
   const date = document.querySelector(".date").value.trim();
-  console.log(date)
   const soundcheck = document.querySelector(".soundcheck").value.trim();
   const loadIn = document.querySelector(".load-in").value.trim();
   const extraDeets = document.querySelector(".extra-deets").value.trim();

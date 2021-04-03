@@ -23,7 +23,6 @@ header {
   align-items: center;
   justify-content: space-between;
   background-image: url("../assets/background4.JPG");
-  background-size: cover;
   background-attachment: fixed;
   padding: 25px;
   position: sticky;
@@ -87,7 +86,6 @@ body {
   position: absolute;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
   width: 100%;
 }
 
@@ -111,4 +109,28 @@ body {
 main {
   flex: 1;
   padding: 2% 4%;
+}
+
+.comment {
+   margin: 15px
+}
+
+.comment-form {
+  width: 50vw;
+}
+
+.comment-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.comments {
+  width: 100%;
+}
+
+.comment-button-wrap {
+  display: flex;
+  justify-content: center;
+  margin: 15px
 }

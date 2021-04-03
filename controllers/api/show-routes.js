@@ -1,9 +1,24 @@
-const {Show} = require("../../models");
+const {Show, Comment, User} = require("../../models");
 const sequelize = require("../../config/connection");
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
-  Show.findAll({}).then((dbPostData) => res.json(dbPostData));
+  Show.findAll({
+    include: [
+      {
+        model: User,
+        attributes: ["username"],
+      },
+      {
+        model: Comment,
+        attributes: ["id", "comment_text", "show_id", "user_id", "created_at"],
+        include: {
+          model: User,
+          attributes: ["username", "band_name"],
+        },
+      },
+    ],
+  }).then((dbPostData) => res.json(dbPostData));
 });
 
 router.post("/", (req, res) => {
@@ -15,6 +30,7 @@ router.post("/", (req, res) => {
     soundcheck: req.body.soundcheck,
     input_list: req.body.input_list,
     stage_plot: req.body.stage_plot,
+    user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
@@ -42,19 +58,5 @@ router.put("/:id", (req, res) => {
       res.status(500).json(err);
     });
 });
-
-// router.get("/:id", (req, res) => {
-//   Show.findOne({
-//     where: {
-//       id: req.params.id
-//     }
-//   }).then((dbShowData) => {
-//     if (!dbShowData) {
-//       res.status(404).json({message: "No shows found with this id"})
-//       return
-//     }
-//     res.json(dbShowData)
-//   })
-// })
 
 module.exports = router;

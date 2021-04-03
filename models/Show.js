@@ -46,6 +46,13 @@ Show.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "User",
+        key: "id",
+      },
+    },
   },
   {
     sequelize,

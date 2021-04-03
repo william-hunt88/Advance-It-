@@ -1,13 +1,26 @@
 <main class="color">
+    <div class="comment-wrapper">
+        <form class="comment-form">
+            <div>
+                <textarea name = "comment-body" class="textarea" placeholder="comment here"></textarea>
+            </div>
+            <div class = "comment-button-wrap">
+                <button type="submit" class="button">add comment</button>
+            </div>
+        </form>
+    </div>
+    <div class="comments">
+        {{> comments shows.comments}}
+    </div>
     <div class="home-wrapper">
         <h1>
             {{shows.band_name}}
         </h1>
         <h2>
-            Load in: {{shows.load_in}}
+            Load in: {{format_time shows.load_in}}
         </h2>
         <h2>
-            Soundcheck: {{shows.soundcheck}}
+            Soundcheck: {{format_time shows.soundcheck}}
         </h2>
         <h3>
             Extra Notes: {{shows.extra_deets}}
@@ -21,3 +34,4 @@
     </div>
 </main>
 <script src="/javascript/single.js"></script>
+<script src="/javascript/comment.js"></script>
