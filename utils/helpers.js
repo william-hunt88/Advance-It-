@@ -5,7 +5,7 @@ module.exports = {
         date
       ).getDate()}/${new Date(date).getFullYear()} at: ${new Date(
         date
-      ).getHours()}:${("0" + new Date(date).getMinutes()).slice(-2)} PM`;
+      ).getHours()-12}:${("0" + new Date(date).getMinutes()).slice(-2)} PM`;
     } else {
       return `${new Date(date).getMonth() + 1}/${new Date(
         date
@@ -42,8 +42,5 @@ module.exports = {
       time[0] = +time[0] % 12 || 12; // Adjust hours
     }
     return time.join(""); // return adjusted time or original string
-  },
-  sort_comments: (comments) => {
-    return comments.sort();
   },
 };
