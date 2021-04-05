@@ -5,13 +5,13 @@ module.exports = {
         date
       ).getDate()}/${new Date(date).getFullYear()} at: ${new Date(
         date
-      ).getHours()-12}:${("0" + new Date(date).getMinutes()).slice(-2)} PM`;
+      ).getHours()-12}:${(new Date(date).getMinutes())} PM`;
     } else {
       return `${new Date(date).getMonth() + 1}/${new Date(
         date
       ).getDate()}/${new Date(date).getFullYear()} at: ${new Date(
         date
-      ).getHours()}:${("0" + new Date(date).getMinutes()).slice(-2)} AM`;
+      ).getHours()}:${(new Date(date).getMinutes())} AM`;
     }
   },
   format_plural: (word, amount) => {
