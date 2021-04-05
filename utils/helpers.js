@@ -1,15 +1,16 @@
 module.exports = {
   format_date: (date) => {
+    return `${new Date(date).getMonth() + 1}/${new Date(
+      date
+    ).getDate()}/${new Date(date).getFullYear()}`;
+  },
+  comment_time: (date) => {
     if (new Date(date).getHours() > 12) {
-      return `${new Date(date).getMonth() + 1}/${new Date(
-        date
-      ).getDate()}/${new Date(date).getFullYear()} at: ${new Date(
+      return `${new Date(
         date
       ).getHours()-12}:${("0" + new Date(date).getMinutes()).slice(-2)} PM`;
     } else {
-      return `${new Date(date).getMonth() + 1}/${new Date(
-        date
-      ).getDate()}/${new Date(date).getFullYear()} at: ${new Date(
+      return `${new Date(
         date
       ).getHours()}:${("0" + new Date(date).getMinutes()).slice(-2)} AM`;
     }
