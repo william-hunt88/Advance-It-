@@ -18,7 +18,11 @@ router.get("/", (req, res) => {
         },
       },
     ],
-  }).then((dbPostData) => res.json(dbPostData));
+  }).then((dbPostData) => res.json(dbPostData))
+  .catch(err => {
+    console.log(err);
+    res.status(400).json(err);
+  });;
 });
 
 router.post("/", (req, res) => {
