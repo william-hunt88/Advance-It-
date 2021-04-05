@@ -48,10 +48,10 @@ Show.init(
     },
     user_id: {
       type: DataTypes.INTEGER,
-      // references: {
-      //   model: "User",
-      //   key: "id",
-      // },
+      references: {
+        model: "User",
+        key: "id",
+      },
     },
   },
   {
