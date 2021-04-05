@@ -10,10 +10,6 @@ Show.belongsTo(User, {
   foreignKey: "user_id",
 });
 
-// User.belongsToMany(Show, {
-//   foreignKey: "user_id",
-// });
-
 Comment.belongsTo(Show, {
   foreignKey: "show_id",
 });
